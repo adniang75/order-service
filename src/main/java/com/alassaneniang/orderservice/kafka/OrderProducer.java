@@ -19,7 +19,7 @@ public class OrderProducer {
     private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
     public void sendMessage(OrderEvent event) {
-        log.info("Order event -> {}", event);
+        log.info("Order event sent from order service -> {}", event);
         // create Message
         Message<OrderEvent> message = MessageBuilder
                 .withPayload(event)
